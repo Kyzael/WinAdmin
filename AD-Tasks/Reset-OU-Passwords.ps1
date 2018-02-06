@@ -1,0 +1,1 @@
+﻿Get-ADUser -Filter * -SearchBase "OU=..." -server server.local | % {Set-ADAccountPassword -Identity $_.samaccountname -reset -NewPassword (ConvertTo-SecureString -AsPlainText 'P@$$w0rd' -Force)}
